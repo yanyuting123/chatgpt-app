@@ -9,7 +9,7 @@ app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # set proxy
-socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 8000)
+socks.set_default_proxy(socks.SOCKS5, "192.168.1.105", 7890)
 socket.socket = socks.socksocket
 
 @app.route("/", methods=("GET", "POST"))
