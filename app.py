@@ -7,9 +7,9 @@ app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # set proxy
-if "http_proxy" not in os.environ and "https _proxy" not in os.environ:
-    os.environ["http_proxy"] = "http://127.0.0.1:7890"
-    os.environ["https_proxy"] = "http://127.0.0.1:7890"
+#if "http_proxy" not in os.environ and "https _proxy" not in os.environ:
+#    os.environ["http_proxy"] = "http://127.0.0.1:7890"
+#    os.environ["https_proxy"] = "http://127.0.0.1:7890"
 
 @app.route("/", methods=("GET", "POST"))
 def index():
@@ -47,4 +47,4 @@ def revise_prompt(passage):
     
     
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0")
