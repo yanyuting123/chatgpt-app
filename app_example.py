@@ -1,3 +1,4 @@
+# copied from original app.py for simple test
 import os
 
 import openai
@@ -7,7 +8,7 @@ app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # set proxy
-#if "http_proxy" not in os.environ and "https _proxy" not in os.environ:
+#if "http_proxy" not in os.environ and "https_proxy" not in os.environ:
 #    os.environ["http_proxy"] = "http://127.0.0.1:7890"
 #    os.environ["https_proxy"] = "http://127.0.0.1:7890"
 

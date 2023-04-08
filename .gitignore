@@ -16,3 +16,7 @@ build/
 .DS_STORE
 
 .env
+
+words/
+mylearning/
+templates/mylearning
