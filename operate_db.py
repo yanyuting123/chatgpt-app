@@ -3,7 +3,7 @@ import random
 
 class DBOperator():
     def __init__(self, database):
-        self.conn = sqlite3.connect(database)
+        self.conn = sqlite3.connect(database, check_same_thread=False)
         self.c = self.conn.cursor()
 
     def __del__(self):
@@ -21,7 +21,7 @@ class DBOperator():
         elif name:
             self.c.execute(f'select table_name from wordsource where name={name}')
         data = self.c.fetchall()
-        if len(data) > 0:
+        if len(data) > 0: 
             table_name = data[0][0]
         else:
             raise Exception(f'Wrong id:{id_} or name:{name}')
